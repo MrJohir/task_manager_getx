@@ -15,11 +15,10 @@ class UpdateTaskStatusController extends GetxController {
 
     if (response.isSuccess) {
       _errorMessage = 'Task status updated successfully';
-      UpdateTaskStatusController;
     }
-    // else {
-    //   _errorMessage = response.errorMessage;
-    // }
+    else {
+      _errorMessage=null;
+    }
     return isSuccess;
   }
 }

@@ -36,8 +36,8 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
-            _progressTaskListController.getTaskList();
         _getTaskCountByStatusController.getTaskCountByStatus();
+        _progressTaskListController.getTaskList();
         //_fetchAllData();
       },
     );
@@ -58,7 +58,7 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
                 child: GetBuilder<ProgressTaskListController>(
                     builder: (controller) {
                   return Visibility(
-                      visible: controller.getTaskListInProgress == false,
+                      visible: controller.inProgress == false,
                       replacement: const CenterCircularProgressIndicator(),
                       child: _buildTaskListView(controller.taskList));
                 }),
@@ -79,7 +79,7 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
   Widget _buildTaskCardStatus(List<TaskCountModel> taskCountByStatusList) {
     return GetBuilder<GetTaskCountByStatusController>(builder: (controller) {
       return Visibility(
-        visible: controller.getTaskCountByStatusInProgress == false,
+        visible: controller.inProgress == false,
         replacement: const CenterCircularProgressIndicator(),
         child: Padding(
             padding: const EdgeInsets.all(16),

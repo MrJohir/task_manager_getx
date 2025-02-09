@@ -5,9 +5,9 @@ import '../../data/service/network_caller.dart';
 import '../../data/utills/urls.dart';
 
 class GetTaskCountByStatusController extends GetxController {
-  bool _getTaskCountByStatusInProgress = false;
+  bool _inProgress = false;
 
-  bool get getTaskCountByStatusInProgress => _getTaskCountByStatusInProgress;
+  bool get inProgress => _inProgress;
 
   String? _errorMessage;
 
@@ -18,7 +18,7 @@ class GetTaskCountByStatusController extends GetxController {
 
   Future<bool> getTaskCountByStatus() async {
     bool isSuccess = false;
-    _getTaskCountByStatusInProgress = true;
+    _inProgress = true;
     update();
     final NetworkResponse response = await NetworkCaller.getRequest(
       url: Urls.taskCountByStatusUrl,
@@ -32,7 +32,7 @@ class GetTaskCountByStatusController extends GetxController {
     } else {
       _errorMessage = response.errorMessage;
     }
-    _getTaskCountByStatusInProgress = false;
+    _inProgress = false;
     update();
     return isSuccess;
   }

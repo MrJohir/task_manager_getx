@@ -35,13 +35,10 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
   void initState() {
     super.initState();
 
-
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         _getTaskCountByStatusController.getTaskCountByStatus();
         _newTaskListController.getTaskList();
-        // _getTaskCountByStatus();
-        // _getNewTaskList();
         // _fetchAllData();
       },
     );
@@ -62,7 +59,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
                 child: GetBuilder<NewTaskListController>(
                   builder: (controller) {
                     return Visibility(
-                      visible: controller.getTaskListInProgress == false,
+                      visible: controller.inProgress == false,
                       replacement: const CenterCircularProgressIndicator(),
                       child: _buildTaskListView(controller.taskList),
                     );
@@ -86,7 +83,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
     return GetBuilder<GetTaskCountByStatusController>(
       builder: (controller) {
         return Visibility(
-          visible: controller.getTaskCountByStatusInProgress == false,
+          visible: controller.inProgress == false,
           replacement: const CenterCircularProgressIndicator(),
           child: Padding(
               padding: const EdgeInsets.all(16),
@@ -125,11 +122,8 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
 
   Future<void> _fetchAllData() async {
     try {
-      // await _getTaskCountByStatusController.getTaskCountByStatus();
-      // await _newTaskListController.getTaskList();
-
-      // await _getTaskCountByStatus();
-      // await _getNewTaskList();
+      await _getTaskCountByStatus();
+      await _getNewTaskList();
     } catch (e) {
       showSnackBarMessage(context, e.toString());
     }

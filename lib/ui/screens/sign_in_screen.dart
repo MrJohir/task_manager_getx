@@ -148,7 +148,6 @@ class _SignInScreenState extends State<SignInScreen> {
                 color: AppColor.themeColor, fontStyle: FontStyle.italic),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                //Navigator.pushNamed(context, SignUpScreen.name);
                 Get.toNamed(SignUpScreen.name);
               },
           ),

@@ -5,9 +5,9 @@ import '../../data/utills/urls.dart';
 import 'package:flutter/services.dart';
 
 class UpdateProfileController extends GetxController {
-  bool _updateProfileInProgress = false;
+  bool _inProgress = false;
 
-  bool get updateProfileInProgress => _updateProfileInProgress;
+  bool get inProgress => _inProgress;
 
   String? _errorMessage;
 
@@ -22,7 +22,7 @@ class UpdateProfileController extends GetxController {
     String? password,
   ) async {
     bool isSuccess = false;
-    _updateProfileInProgress = true;
+    _inProgress = true;
     update();
     Map<String, dynamic> requestBody = {
       "email": email,
@@ -50,22 +50,8 @@ class UpdateProfileController extends GetxController {
     } else {
       _errorMessage = response.errorMessage;
     }
-    _updateProfileInProgress = false;
+    _inProgress = false;
     update();
     return isSuccess;
   }
 }
-
-
-
-
-
-
-// Future<bool> pickImage() async {
-//   ImagePicker picker = ImagePicker();
-//   XFile? image = await picker.pickImage(source: ImageSource.gallery);
-//   if (image != null) {
-//     _pickedImage = image;
-//     setState(() {});
-//   }
-// }

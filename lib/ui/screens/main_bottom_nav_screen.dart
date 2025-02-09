@@ -17,7 +17,6 @@ class MainBottomNavScreen extends StatefulWidget {
 
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   final MainBottomNavController _mainBottomNavController = Get.find<MainBottomNavController>();
- // int _selectedIndex = 0;
 
   final List<Widget> _screens = const [
     NewTaskListScreen(),

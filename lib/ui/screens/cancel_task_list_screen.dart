@@ -35,8 +35,8 @@ class _CancelTaskListScreenState extends State<CancelTaskListScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
-        _cancelTaskListController.getTaskList();
         _getTaskCountByStatusController.getTaskCountByStatus();
+        _cancelTaskListController.getTaskList();
         // _fetchAllData();
       },
     );
@@ -57,7 +57,7 @@ class _CancelTaskListScreenState extends State<CancelTaskListScreen> {
                 child: GetBuilder<CancelTaskListController>(
                     builder: (controller) {
                   return Visibility(
-                      visible: controller.getTaskListInProgress == false,
+                      visible: controller.inProgress == false,
                       replacement: const CenterCircularProgressIndicator(),
                       child: _buildTaskListView(controller.taskList));
                 }),
@@ -68,7 +68,6 @@ class _CancelTaskListScreenState extends State<CancelTaskListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //Navigator.pushNamed(context, AddNewTaskListScreen.name);
           Get.toNamed(AddNewTaskListScreen.name);
         },
         child: const Icon(Icons.add),
@@ -79,7 +78,7 @@ class _CancelTaskListScreenState extends State<CancelTaskListScreen> {
   Widget _buildTaskCardStatus(List<TaskCountModel> taskCountByStatusList) {
     return GetBuilder<GetTaskCountByStatusController>(builder: (controller) {
       return Visibility(
-        visible: controller.getTaskCountByStatusInProgress == false,
+        visible: controller.inProgress == false,
         replacement: const CenterCircularProgressIndicator(),
         child: Padding(
             padding: const EdgeInsets.all(16),

@@ -78,7 +78,7 @@ class _AddNewTaskListScreenState extends State<AddNewTaskListScreen> {
                   ),
                   GetBuilder<AddNewTaskListController>(builder: (controller) {
                     return Visibility(
-                      visible: controller.createTaskInProgress == false,
+                      visible: controller.inProgress == false,
                       replacement: const CenterCircularProgressIndicator(),
                       child: ElevatedButton(
                           onPressed: () {

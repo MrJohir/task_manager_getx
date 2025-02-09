@@ -3,15 +3,15 @@ import '../../data/service/network_caller.dart';
 import '../../data/utills/urls.dart';
 
 class ResetPasswordController extends GetxController {
-  bool _resetPasswordInProgress = false;
-  bool get resetPasswordInProgress => _resetPasswordInProgress;
+  bool _inProgress = false;
+  bool get inProgress => _inProgress;
 
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
 
   Future<bool> resetPassword(email, otp, String password) async {
     bool isSuccess = false;
-    _resetPasswordInProgress = true;
+    _inProgress = true;
     update();
 
     Map<String, dynamic> requestBody = {
@@ -31,7 +31,7 @@ class ResetPasswordController extends GetxController {
     } else {
       _errorMessage = response.errorMessage;
     }
-    _resetPasswordInProgress = false;
+    _inProgress = false;
     update();
     return isSuccess;
   }

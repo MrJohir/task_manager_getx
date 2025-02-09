@@ -14,9 +14,9 @@ class DeleteTaskListController extends GetxController {
     if (response.isSuccess) {
       _errorMessage = 'Task delete successful';
     }
-    // else {
-    //   _errorMessage = response.errorMessage;
-    // }
+    else {
+      _errorMessage=null;
+    }
     return isSuccess;
   }
 }

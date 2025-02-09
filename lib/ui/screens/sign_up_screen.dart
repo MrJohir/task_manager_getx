@@ -198,7 +198,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   color: AppColor.themeColor, fontStyle: FontStyle.italic),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  //Navigator.pop(context);
                   Get.back();
                 },
             ),

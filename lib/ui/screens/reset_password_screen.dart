@@ -90,7 +90,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   GetBuilder<ResetPasswordController>(
                     builder: (controller) {
                       return Visibility(
-                        visible: controller.resetPasswordInProgress == false,
+                        visible: controller.inProgress == false,
                         replacement: const CenterCircularProgressIndicator(),
                         child: ElevatedButton(
                             onPressed: () {

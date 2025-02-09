@@ -136,7 +136,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   ),
                   GetBuilder<UpdateProfileController>(builder: (controller) {
                     return Visibility(
-                      visible: controller.updateProfileInProgress == false,
+                      visible: controller.inProgress == false,
                       replacement: const CenterCircularProgressIndicator(),
                       child: ElevatedButton(
                         onPressed: _onTapUpdateProfile,

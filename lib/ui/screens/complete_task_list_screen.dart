@@ -35,8 +35,8 @@ final CompleteTaskLIstController _completeTaskLIstController = Get.find<Complete
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
           (_) {
+            _getTaskCountByStatusController.getTaskCountByStatus();
             _completeTaskLIstController.getTaskList();
-        _getTaskCountByStatusController.getTaskCountByStatus();
         // _fetchAllData();
       },
     );
@@ -57,7 +57,7 @@ final CompleteTaskLIstController _completeTaskLIstController = Get.find<Complete
                 child: GetBuilder<CompleteTaskLIstController>(
                   builder: (controller) {
                     return Visibility(
-                        visible: controller.getTaskListInProgress == false,
+                        visible: controller.inProgress == false,
                         replacement: const CenterCircularProgressIndicator(),
                         child: _buildTaskListView(controller.taskList));
                   }
@@ -69,7 +69,6 @@ final CompleteTaskLIstController _completeTaskLIstController = Get.find<Complete
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //Navigator.pushNamed(context, AddNewTaskListScreen.name);
           Get.toNamed(AddNewTaskListScreen.name);
         },
         child: const Icon(Icons.add),
@@ -80,7 +79,7 @@ final CompleteTaskLIstController _completeTaskLIstController = Get.find<Complete
   Widget _buildTaskCardStatus(List<TaskCountModel> taskCountByStatusList) {
     return GetBuilder<GetTaskCountByStatusController>(builder: (controller) {
       return Visibility(
-        visible: controller.getTaskCountByStatusInProgress == false,
+        visible: controller.inProgress == false,
         replacement: const CenterCircularProgressIndicator(),
         child: Padding(
             padding: const EdgeInsets.all(16),

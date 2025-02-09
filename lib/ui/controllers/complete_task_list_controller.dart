@@ -5,9 +5,9 @@ import '../../data/service/network_caller.dart';
 import '../../data/utills/urls.dart';
 
 class CompleteTaskLIstController extends GetxController {
-  bool _getTaskListInProgress = false;
+  bool _inProgress = false;
 
-  bool get getTaskListInProgress => _getTaskListInProgress;
+  bool get inProgress => _inProgress;
 
   String? _errorMessage;
 
@@ -18,7 +18,7 @@ class CompleteTaskLIstController extends GetxController {
 
   Future<bool> getTaskList() async {
     bool isSuccess = false;
-    _getTaskListInProgress = true;
+    _inProgress = true;
     update();
     final NetworkResponse response = await NetworkCaller.getRequest(
       url: Urls.taskListByStatusUrl('Completed'),
@@ -31,7 +31,7 @@ class CompleteTaskLIstController extends GetxController {
     } else {
       _errorMessage = response.errorMessage;
     }
-    _getTaskListInProgress = false;
+    _inProgress = false;
     update();
     return isSuccess;
   }

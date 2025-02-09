@@ -4,9 +4,9 @@ import '../../data/service/network_caller.dart';
 import '../../data/utills/urls.dart';
 
 class AddNewTaskListController extends GetxController{
-   bool _createTaskInProgress = false;
+   bool _inProgress = false;
 
-   bool get createTaskInProgress => _createTaskInProgress;
+   bool get inProgress => _inProgress;
 
   String? _errorMessage;
   String? get errorMessage => _errorMessage;
@@ -14,7 +14,7 @@ class AddNewTaskListController extends GetxController{
 
   Future<bool> createNewTask(String title, String description) async {
     bool isSuccess = false;
-    _createTaskInProgress=true;
+    _inProgress=true;
     update();
     Map<String, dynamic> requestBody = {
       "title": title,
@@ -24,7 +24,7 @@ class AddNewTaskListController extends GetxController{
 
     final NetworkResponse response = await NetworkCaller.postRequest(
         url: Urls.createTaskUrl, body: requestBody);
-    _createTaskInProgress=false;
+    _inProgress=false;
     update();
     if(response.isSuccess){
      _errorMessage = 'New task added!';
