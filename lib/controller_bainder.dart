@@ -12,6 +12,7 @@ import 'package:task_manager_getx/ui/controllers/progress_task_list_controller.d
 import 'package:task_manager_getx/ui/controllers/reset_password_controller.dart';
 import 'package:task_manager_getx/ui/controllers/sign_in_controller.dart';
 import 'package:task_manager_getx/ui/controllers/sign_up_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_item_widget_controller.dart';
 import 'package:task_manager_getx/ui/controllers/update_profile_controller.dart';
 import 'package:task_manager_getx/ui/controllers/update_task_status_controller.dart';
 
@@ -33,6 +34,6 @@ class ControllerBinder extends Bindings {
     Get.lazyPut(() => ResetPasswordController());
     Get.lazyPut(() => UpdateProfileController());
     Get.lazyPut(() => MainBottomNavController());
-    //Get.put(MainBottomNavController());
+    Get.lazyPut(()=> TaskItemWidgetController());
   }
 }

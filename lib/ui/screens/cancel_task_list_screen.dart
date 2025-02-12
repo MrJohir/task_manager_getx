@@ -35,9 +35,9 @@ class _CancelTaskListScreenState extends State<CancelTaskListScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
-        _getTaskCountByStatusController.getTaskCountByStatus();
-        _cancelTaskListController.getTaskList();
-        // _fetchAllData();
+        // _getTaskCountByStatusController.getTaskCountByStatus();
+        // _cancelTaskListController.getTaskList();
+         _fetchAllData();
       },
     );
   }
@@ -118,42 +118,42 @@ class _CancelTaskListScreenState extends State<CancelTaskListScreen> {
       await _getTaskCountByStatus();
       await _getCancelTaskList();
     } catch (e) {
-      showSnackBarMessage(context, e.toString());
+      errorSnackBarMessage(e.toString());
     }
   }
-
   Future<void> _deleteTask(String id) async {
     final bool isSuccess = await _deleteTaskListController.deleteTask(id);
     if (isSuccess) {
-      _fetchAllData();
+      successSnackBarMessage('Task delete successful');
+      await _fetchAllData();
     } else {
-      showSnackBarMessage(context, _deleteTaskListController.errorMessage!);
+      errorSnackBarMessage(_deleteTaskListController.errorMessage!);
     }
   }
 
   Future<void> _updateTaskStatus(String id, String status) async {
     final bool isSuccess =
-        await _updateTaskStatusController.updateTaskStatus(id, status);
+    await _updateTaskStatusController.updateTaskStatus(id, status);
     if (isSuccess) {
-      _fetchAllData();
+      successSnackBarMessage('Task status updated successful');
+      await _fetchAllData();
     } else {
-      showSnackBarMessage(context, _updateTaskStatusController.errorMessage!);
+      errorSnackBarMessage(_updateTaskStatusController.errorMessage!);
     }
   }
 
   Future<void> _getTaskCountByStatus() async {
     final bool isSuccess =
-        await _getTaskCountByStatusController.getTaskCountByStatus();
-    if (isSuccess) {
-      showSnackBarMessage(
-          context, _getTaskCountByStatusController.errorMassage!);
+    await _getTaskCountByStatusController.getTaskCountByStatus();
+    if (!isSuccess) {
+      errorSnackBarMessage(_getTaskCountByStatusController.errorMassage!);
     }
   }
 
   Future<void> _getCancelTaskList() async {
     final bool isSuccess = await _cancelTaskListController.getTaskList();
     if (!isSuccess) {
-      showSnackBarMessage(context, _cancelTaskListController.errorMassage!);
+      errorSnackBarMessage(_cancelTaskListController.errorMassage!);
     }
   }
 }
