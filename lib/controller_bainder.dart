@@ -22,11 +22,13 @@ class ControllerBinder extends Bindings {
     Get.lazyPut(() => SignInController());
     Get.lazyPut(() => SignUpController());
     Get.lazyPut(() => AddNewTaskListController());
-    Get.put(NewTaskListController());
+    Get.lazyPut(() => NewTaskListController());
+    //Get.put(NewTaskListController());
     Get.lazyPut(() => ProgressTaskListController());
     Get.lazyPut(() => CompleteTaskLIstController());
     Get.lazyPut(() => CancelTaskListController());
-    Get.put(GetTaskCountByStatusController());
+    Get.lazyPut(() => GetTaskCountByStatusController());
+    // Get.put(GetTaskCountByStatusController());
     Get.lazyPut(() => DeleteTaskListController());
     Get.lazyPut(() => UpdateTaskStatusController());
     Get.lazyPut(() => EmailVerifyController());
@@ -34,6 +36,8 @@ class ControllerBinder extends Bindings {
     Get.lazyPut(() => ResetPasswordController());
     Get.lazyPut(() => UpdateProfileController());
     Get.lazyPut(() => MainBottomNavController());
-    Get.lazyPut(()=> TaskItemWidgetController());
+    //Get.put(MainBottomNavController());
+    //Get.put(TaskItemWidgetController());
+    Get.lazyPut(() => TaskItemWidgetController());
   }
 }

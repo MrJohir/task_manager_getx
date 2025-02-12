@@ -107,19 +107,9 @@ class _AddNewTaskListScreenState extends State<AddNewTaskListScreen> {
     if (isSuccess) {
       _clearTextField();
       Get.offAllNamed(MainBottomNavScreen.name);
-      successSnackBarMessage('message');
+      successSnackBarMessage('Task added successful');
     } else {
-      Get.snackbar(
-        'Error!',
-        _addNewTaskListController.errorMessage!,
-        snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 2),
-        titleText: const Text(
-          'Error!',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red),
-        ),
-      );
+      errorSnackBarMessage(_addNewTaskListController.errorMessage!);
     }
   }
 

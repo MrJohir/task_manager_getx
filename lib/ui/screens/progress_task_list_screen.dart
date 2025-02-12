@@ -36,9 +36,9 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
-        // _getTaskCountByStatusController.getTaskCountByStatus();
-        // _progressTaskListController.getTaskList();
-        _fetchAllData();
+        _getTaskCountByStatusController.getTaskCountByStatus();
+        _progressTaskListController.getTaskList();
+       // _fetchAllData();
       },
     );
   }
@@ -127,8 +127,8 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
   Future<void> _deleteTask(String id) async {
     final bool isSuccess = await _deleteTaskListController.deleteTask(id);
     if (isSuccess) {
-      successSnackBarMessage('Task delete successful');
       await _fetchAllData();
+      successSnackBarMessage('Task delete successful');
     } else {
       errorSnackBarMessage(_deleteTaskListController.errorMessage!);
     }
@@ -138,8 +138,8 @@ class _ProgressTaskListScreenState extends State<ProgressTaskListScreen> {
     final bool isSuccess =
     await _updateTaskStatusController.updateTaskStatus(id, status);
     if (isSuccess) {
-      successSnackBarMessage('Task status updated successful');
       await _fetchAllData();
+      successSnackBarMessage('Task status updated successful');
     } else {
       errorSnackBarMessage(_updateTaskStatusController.errorMessage!);
     }
