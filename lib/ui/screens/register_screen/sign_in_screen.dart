@@ -130,6 +130,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
     if (isSuccess) {
       successSnackBarMessage('Sign in successful');
+
       Get.offNamed(MainBottomNavScreen.name);
     } else {
       errorSnackBarMessage(_signInController.errorMassage!);

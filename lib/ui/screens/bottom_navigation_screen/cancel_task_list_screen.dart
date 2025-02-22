@@ -52,48 +52,51 @@ class _CancelTaskListScreenState extends State<CancelTaskListScreen> {
               visible: !controller.inProgress || !controller.inProgress,
               replacement: const CenterCircularProgressIndicator(),
               child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: SizedBox(
-                        height: 70,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: controller.taskCountByStatusList.length,
-                          itemBuilder: (context, index) {
-                            const List<String> statusOrder = [
-                              'New',
-                              'Progress',
-                              'Completed',
-                              'Canceled'
-                            ];
-                            controller.taskCountByStatusList.sort(
-                              (a, b) {
-                                int indexA = statusOrder.indexOf(a.sId ?? '');
-                                int indexB = statusOrder.indexOf(b.sId ?? '');
-                                return indexA.compareTo(indexB);
-                              },
-                            );
-                            final TaskCountModel model =
-                                controller.taskCountByStatusList[index];
-                            return TaskCardStatusWidget(
-                              title: model.sId ?? '',
-                              count: model.sum.toString(),
-                            );
-                          },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: SizedBox(
+                          height: 90,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: controller.taskCountByStatusList.length,
+                            itemBuilder: (context, index) {
+                              const List<String> statusOrder = [
+                                'New',
+                                'Progress',
+                                'Completed',
+                                'Canceled'
+                              ];
+                              controller.taskCountByStatusList.sort(
+                                (a, b) {
+                                  int indexA = statusOrder.indexOf(a.sId ?? '');
+                                  int indexB = statusOrder.indexOf(b.sId ?? '');
+                                  return indexA.compareTo(indexB);
+                                },
+                              );
+                              final TaskCountModel model =
+                                  controller.taskCountByStatusList[index];
+                              return TaskCardStatusWidget(
+                                title: model.sId ?? '',
+                                count: model.sum.toString(),
+                              );
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                    GetBuilder<CancelTaskListController>(
-                      builder: (controller) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                          child: _buildTaskListView(controller.taskList),
-                        );
-                      },
-                    ),
-                  ],
+                      GetBuilder<CancelTaskListController>(
+                        builder: (controller) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: _buildTaskListView(controller.taskList),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             );

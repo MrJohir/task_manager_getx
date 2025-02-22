@@ -61,7 +61,7 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
                       Padding(
                         padding: const EdgeInsets.all(8),
                         child: SizedBox(
-                          height: 100,
+                          height: 90,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: controller.taskCountByStatusList.length,

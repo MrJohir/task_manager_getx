@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/svg.dart';
-
 import '../utils/assets_path.dart';
 
 class AppLogo extends StatelessWidget {
@@ -10,6 +8,6 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(AssetsPath.logoSvg);
+    return Image.asset(AssetsPath.logoJpg,);
   }
 }
