@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../../data/service/network_caller.dart';
-import '../../data/utills/urls.dart';
+import '../../../data/service/network_caller.dart';
+import '../../../data/utils/urls.dart';
 
 class OTPVerifyController extends GetxController{
   bool _inProgress = false;

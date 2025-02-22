@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager_getx/ui/controllers/main_bottom_nav_controller.dart';
-import 'package:task_manager_getx/ui/screens/progress_task_list_screen.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/main_bottom_nav_controller.dart';
+import 'package:task_manager_getx/ui/screens/bottom_navigation_screen/progress_task_list_screen.dart';
 import 'cancel_task_list_screen.dart';
 import 'complete_task_list_screen.dart';
 import 'new_task_list_screen.dart';

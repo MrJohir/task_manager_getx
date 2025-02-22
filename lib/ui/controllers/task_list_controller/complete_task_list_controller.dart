@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:task_manager_getx/data/models/task_list_by_status_model.dart';
 import 'package:task_manager_getx/data/models/task_list_model.dart';
-import '../../data/service/network_caller.dart';
-import '../../data/utills/urls.dart';
+import '../../../data/service/network_caller.dart';
+import '../../../data/utils/urls.dart';
 
-class NewTaskListController extends GetxController {
+class CompleteTaskLIstController extends GetxController {
   bool _inProgress = false;
 
   bool get inProgress => _inProgress;
@@ -21,7 +21,7 @@ class NewTaskListController extends GetxController {
     _inProgress = true;
     update();
     final NetworkResponse response = await NetworkCaller.getRequest(
-      url: Urls.taskListByStatusUrl('New'),
+      url: Urls.taskListByStatusUrl('Completed'),
     );
     if (response.isSuccess) {
       _taskListByStatusModel =

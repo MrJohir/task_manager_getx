@@ -1,14 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager_getx/ui/controllers/sign_in_controller.dart';
-import 'package:task_manager_getx/ui/screens/sign_up_screen.dart';
-import '../utills/app_colors.dart';
-import '../widgets/center_circular_progress_indicator.dart';
-import '../widgets/screen_background.dart';
-import '../widgets/snack_bar_message.dart';
-import 'forget_password_verify_email_screen.dart';
-import 'main_bottom_nav_screen.dart';
+import 'package:task_manager_getx/ui/controllers/register_controller/sign_in_controller.dart';
+import 'package:task_manager_getx/ui/screens/register_screen/sign_up_screen.dart';
+import '../../utils/app_colors.dart';
+import '../../widgets/center_circular_progress_indicator.dart';
+import '../../widgets/screen_background.dart';
+import '../../widgets/snack_bar_message.dart';
+import '../forget_password_screen/forget_password_verify_email_screen.dart';
+import '../bottom_navigation_screen/main_bottom_nav_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});

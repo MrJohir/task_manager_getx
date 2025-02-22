@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager_getx/ui/controllers/email_verify_controller.dart';
+import 'package:task_manager_getx/ui/controllers/forget_password_controller/email_verify_controller.dart';
 import 'package:task_manager_getx/ui/widgets/snack_bar_message.dart';
-import '../utills/app_colors.dart';
-import '../widgets/center_circular_progress_indicator.dart';
-import '../widgets/screen_background.dart';
+import '../../utils/app_colors.dart';
+import '../../widgets/center_circular_progress_indicator.dart';
+import '../../widgets/screen_background.dart';
 import 'forget_password_verify_otp_screen.dart';
 
 class ForgetPasswordVerifyEmailScreen extends StatefulWidget {

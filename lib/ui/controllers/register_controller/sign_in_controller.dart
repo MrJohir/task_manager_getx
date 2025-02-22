@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:task_manager_getx/ui/widgets/snack_bar_message.dart';
-import '../../data/models/user_model.dart';
-import '../../data/service/network_caller.dart';
-import '../../data/utills/urls.dart';
-import 'auth_controller.dart';
+import '../../../data/models/user_model.dart';
+import '../../../data/service/network_caller.dart';
+import '../../../data/utils/urls.dart';
+import '../auth_controller.dart';
 
 class SignInController extends GetxController {
   bool _inProgress = false;

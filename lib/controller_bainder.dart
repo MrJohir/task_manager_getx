@@ -1,20 +1,20 @@
 import 'package:get/get.dart';
-import 'package:task_manager_getx/ui/controllers/add_new_task_list_controller.dart';
-import 'package:task_manager_getx/ui/controllers/cancel_task_list_controller.dart';
-import 'package:task_manager_getx/ui/controllers/complete_task_list_controller.dart';
-import 'package:task_manager_getx/ui/controllers/delete_task_list_controller.dart';
-import 'package:task_manager_getx/ui/controllers/email_verify_controller.dart';
-import 'package:task_manager_getx/ui/controllers/getTaskCountByStatusController.dart';
-import 'package:task_manager_getx/ui/controllers/main_bottom_nav_controller.dart';
-import 'package:task_manager_getx/ui/controllers/new_task_list_controller.dart';
-import 'package:task_manager_getx/ui/controllers/otp_verify_controller.dart';
-import 'package:task_manager_getx/ui/controllers/progress_task_list_controller.dart';
-import 'package:task_manager_getx/ui/controllers/reset_password_controller.dart';
-import 'package:task_manager_getx/ui/controllers/sign_in_controller.dart';
-import 'package:task_manager_getx/ui/controllers/sign_up_controller.dart';
-import 'package:task_manager_getx/ui/controllers/task_item_widget_controller.dart';
-import 'package:task_manager_getx/ui/controllers/update_profile_controller.dart';
-import 'package:task_manager_getx/ui/controllers/update_task_status_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/add_new_task_list_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/cancel_task_list_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/complete_task_list_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_status_controller/delete_task_controller.dart';
+import 'package:task_manager_getx/ui/controllers/forget_password_controller/email_verify_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_status_controller/getTaskCountByStatusController.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/main_bottom_nav_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/new_task_list_controller.dart';
+import 'package:task_manager_getx/ui/controllers/forget_password_controller/otp_verify_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/progress_task_list_controller.dart';
+import 'package:task_manager_getx/ui/controllers/forget_password_controller/reset_password_controller.dart';
+import 'package:task_manager_getx/ui/controllers/register_controller/sign_in_controller.dart';
+import 'package:task_manager_getx/ui/controllers/register_controller/sign_up_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_status_controller/task_item_widget_controller.dart';
+import 'package:task_manager_getx/ui/controllers/register_controller/update_profile_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_status_controller/update_task_status_controller.dart';
 
 class ControllerBinder extends Bindings {
   @override
@@ -36,8 +36,6 @@ class ControllerBinder extends Bindings {
     Get.lazyPut(() => ResetPasswordController());
     Get.lazyPut(() => UpdateProfileController());
     Get.lazyPut(() => MainBottomNavController());
-    //Get.put(MainBottomNavController());
-    //Get.put(TaskItemWidgetController());
     Get.lazyPut(() => TaskItemWidgetController());
   }
 }

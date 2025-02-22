@@ -1,33 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_manager_getx/controller_bainder.dart';
-import 'package:task_manager_getx/ui/screens/add_new_task_list_screen.dart';
-import 'package:task_manager_getx/ui/screens/forget_password_verify_email_screen.dart';
-import 'package:task_manager_getx/ui/screens/forget_password_verify_otp_screen.dart';
-import 'package:task_manager_getx/ui/screens/main_bottom_nav_screen.dart';
-import 'package:task_manager_getx/ui/screens/reset_password_screen.dart';
-import 'package:task_manager_getx/ui/screens/sign_in_screen.dart';
-import 'package:task_manager_getx/ui/screens/sign_up_screen.dart';
-import 'package:task_manager_getx/ui/screens/splash_screen.dart';
-import 'package:task_manager_getx/ui/screens/update_profile_screen.dart';
-import 'package:task_manager_getx/ui/utills/app_colors.dart';
+import 'package:task_manager_getx/ui/screens/bottom_navigation_screen/add_new_task_list_screen.dart';
+import 'package:task_manager_getx/ui/screens/forget_password_screen/forget_password_verify_email_screen.dart';
+import 'package:task_manager_getx/ui/screens/forget_password_screen/forget_password_verify_otp_screen.dart';
+import 'package:task_manager_getx/ui/screens/bottom_navigation_screen/main_bottom_nav_screen.dart';
+import 'package:task_manager_getx/ui/screens/forget_password_screen/reset_password_screen.dart';
+import 'package:task_manager_getx/ui/screens/register_screen/sign_in_screen.dart';
+import 'package:task_manager_getx/ui/screens/register_screen/sign_up_screen.dart';
+import 'package:task_manager_getx/ui/screens/bottom_navigation_screen/splash_screen.dart';
+import 'package:task_manager_getx/ui/screens/register_screen/update_profile_screen.dart';
+import 'package:task_manager_getx/ui/utils/app_colors.dart';
 
 class TaskManager extends StatelessWidget {
   const TaskManager({super.key});
 
- // static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      //navigatorKey: navigatorKey,
       initialBinding: ControllerBinder(),
       theme: ThemeData(
           colorSchemeSeed: AppColor.themeColor,
           textTheme: const TextTheme(
             titleLarge: TextStyle(
-              fontSize: 28,
+              fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
             titleSmall: TextStyle(
@@ -54,6 +52,8 @@ class TaskManager extends StatelessWidget {
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColor.themeColor,
+              iconColor: Colors.white,
+              iconSize: 24,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),

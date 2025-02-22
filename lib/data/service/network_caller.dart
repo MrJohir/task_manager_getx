@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:get/route_manager.dart';
 import 'package:http/http.dart';
-import 'package:task_manager_getx/ui/screens/splash_screen.dart';
+import 'package:task_manager_getx/ui/screens/bottom_navigation_screen/splash_screen.dart';
 import '../../ui/controllers/auth_controller.dart';
 
 class NetworkResponse {

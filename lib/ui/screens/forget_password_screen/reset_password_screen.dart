@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager_getx/ui/controllers/reset_password_controller.dart';
-import 'package:task_manager_getx/ui/screens/sign_in_screen.dart';
-import '../utills/app_colors.dart';
-import '../widgets/center_circular_progress_indicator.dart';
-import '../widgets/screen_background.dart';
-import '../widgets/snack_bar_message.dart';
+import 'package:task_manager_getx/ui/controllers/forget_password_controller/reset_password_controller.dart';
+import 'package:task_manager_getx/ui/screens/register_screen/sign_in_screen.dart';
+import '../../utils/app_colors.dart';
+import '../../widgets/center_circular_progress_indicator.dart';
+import '../../widgets/screen_background.dart';
+import '../../widgets/snack_bar_message.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key, this.email, this.otp});

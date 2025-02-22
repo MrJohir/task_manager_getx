@@ -2,13 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:task_manager_getx/ui/controllers/otp_verify_controller.dart';
-import 'package:task_manager_getx/ui/screens/reset_password_screen.dart';
-import 'package:task_manager_getx/ui/screens/sign_in_screen.dart';
-import '../utills/app_colors.dart';
-import '../widgets/center_circular_progress_indicator.dart';
-import '../widgets/screen_background.dart';
-import '../widgets/snack_bar_message.dart';
+import 'package:task_manager_getx/ui/controllers/forget_password_controller/otp_verify_controller.dart';
+import 'package:task_manager_getx/ui/screens/forget_password_screen/reset_password_screen.dart';
+import 'package:task_manager_getx/ui/screens/register_screen/sign_in_screen.dart';
+import '../../utils/app_colors.dart';
+import '../../widgets/center_circular_progress_indicator.dart';
+import '../../widgets/screen_background.dart';
+import '../../widgets/snack_bar_message.dart';
 
 class ForgetPasswordVerifyOtpScreen extends StatefulWidget {
   const ForgetPasswordVerifyOtpScreen({super.key, this.email, this.otp});

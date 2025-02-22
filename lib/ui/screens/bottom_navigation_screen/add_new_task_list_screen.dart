@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager_getx/ui/controllers/add_new_task_list_controller.dart';
+import 'package:task_manager_getx/ui/controllers/task_list_controller/add_new_task_list_controller.dart';
 import 'package:task_manager_getx/ui/widgets/snack_bar_message.dart';
-import '../widgets/center_circular_progress_indicator.dart';
-import '../widgets/screen_background.dart';
-import '../widgets/tm_app_bar.dart';
+import '../../widgets/center_circular_progress_indicator.dart';
+import '../../widgets/screen_background.dart';
+import '../../widgets/tm_app_bar.dart';
 import 'main_bottom_nav_screen.dart';
 
 class AddNewTaskListScreen extends StatefulWidget {
@@ -106,8 +106,8 @@ class _AddNewTaskListScreenState extends State<AddNewTaskListScreen> {
 
     if (isSuccess) {
       _clearTextField();
-      Get.offAllNamed(MainBottomNavScreen.name);
       successSnackBarMessage('Task added successful');
+      Get.offAllNamed(MainBottomNavScreen.name);
     } else {
       errorSnackBarMessage(_addNewTaskListController.errorMessage!);
     }

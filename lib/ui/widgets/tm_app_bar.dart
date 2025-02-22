@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/auth_controller.dart';
-import '../screens/sign_in_screen.dart';
-import '../screens/update_profile_screen.dart';
-import '../utills/app_colors.dart';
+import '../screens/register_screen/sign_in_screen.dart';
+import '../screens/register_screen/update_profile_screen.dart';
+import '../utils/app_colors.dart';
 
 class TMAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TMAppBar({

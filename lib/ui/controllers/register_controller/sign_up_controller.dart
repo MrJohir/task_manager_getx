@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:task_manager_getx/data/utills/urls.dart';
+import 'package:task_manager_getx/data/utils/urls.dart';
 
-import '../../data/service/network_caller.dart';
+import '../../../data/service/network_caller.dart';
 
 class SignUpController extends GetxController {
   bool _upProgress = false;
